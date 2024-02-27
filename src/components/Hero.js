@@ -55,7 +55,7 @@ export default function Hero() {
           sx={{ p: 2, border: "1px solid grey" }}
         >
           <Box>
-            <img src={"/hero.png"} loading="lazy" />
+            <img src={"/hero.png"} loading="lazy" alt="" />
           </Box>
         </Grid>
       </Grid>
