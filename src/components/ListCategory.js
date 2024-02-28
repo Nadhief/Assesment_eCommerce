@@ -25,7 +25,7 @@ const ListPets = ({ list }) => {
     <>
       <Grid container spacing={2} sx={{ flexGrow: 1, gap: 0 }}>
         <Grid xs={4}>
-          <Box sx={{ pt: 8 }}>
+          <Box sx={{ pt: 6 }}>
             <Typography
               variant="h5"
               sx={{
@@ -122,7 +122,7 @@ const ListPets = ({ list }) => {
           </Stack>
         </Grid>
         <Grid xs={8}>
-          <Box sx={{ pt: 8 }}>
+          <Box sx={{ pt: 6 }}>
             <Box>
               <Stack
                 sx={{
@@ -206,7 +206,8 @@ const ListPets = ({ list }) => {
                 direction={"row"}
                 sx={{
                   justifyContent: "center",
-                  pt:3
+                  pt:3,
+                  pb:6,
                 }}
               >
                 <Pagination count={10} color="primary" />

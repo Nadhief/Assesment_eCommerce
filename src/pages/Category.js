@@ -67,7 +67,7 @@ const Category = () => {
           <HeroCategory></HeroCategory>
         </Box>
       </Container>
-      <Container maxWidth="lg" sx={{ pt: 12 }}>
+      <Container maxWidth="lg">
         <ListCategory list={petss}></ListCategory>
       </Container>
     </>

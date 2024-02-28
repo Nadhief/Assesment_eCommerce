@@ -81,9 +81,6 @@ const Knowledge = ({ list }) => {
                     <Typography
                       sx={{
                         pt: 1,
-                        // overflow: "hidden",
-                        // textOverflow: "ellipsis",
-                        // height:100
                       }}
                     >
                       {knowledge.deskripsi}

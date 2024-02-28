@@ -45,7 +45,6 @@ export default function Hero() {
                   Thousands more fun!
                 </Typography>
                 <Typography variant="h6" sx={{ paddingTop: 2 }}>
-                <Typography variant="h6" sx={{ paddingTop: 2 }}>
                   Having a pet means you have more joy, a new friend, a happy
                   person who will always be with you to have fun. We have 200+
                   different pets that can meet your needs!
@@ -60,18 +59,10 @@ export default function Hero() {
                       color: "#003459",
                       borderRadius: 30,
                     }}
-                    sx={{
-                      border: "1px solid #003459",
-                      color: "#003459",
-                      borderRadius: 30,
-                    }}
                   >
                     View Intro
                   </Button>
-                  <Button
-                    variant="contained"
-                    sx={{ background: "#003459", borderRadius: 30 }}
-                  >
+
                   <Button
                     variant="contained"
                     sx={{ background: "#003459", borderRadius: 30 }}

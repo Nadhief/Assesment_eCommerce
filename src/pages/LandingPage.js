@@ -184,7 +184,7 @@ const LandingPage = () => {
           </Box>
         </Container>
       </Hidden>
-      <Container maxWidth="lg" sx={{ pt: 8 }}>
+      <Container maxWidth="lg" sx={{ pt: 8, mb:5 }}>
         <Box>
           <Knowledge list={knowledgess}></Knowledge>
         </Box>
