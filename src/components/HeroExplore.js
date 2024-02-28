@@ -46,7 +46,7 @@ export default function HeroExplore() {
                   One More Friend
                 </Typography>
                 <Typography
-                  variant="h3"
+                  variant="h4"
                   gutterBottom
                   sx={{
                     fontWeight: "bold",

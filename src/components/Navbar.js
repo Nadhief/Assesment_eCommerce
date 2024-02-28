@@ -97,10 +97,7 @@ function ResponsiveAppBar() {
   return (
     <AppBar
       position="absolute"
-      style={{
-        backgroundColor: "transparent",
-        boxShadow: "none",
-      }}
+      style={{ backgroundColor: "transparent", boxShadow: "none" }}
     >
       <Container>
         <Toolbar disableGutters>
