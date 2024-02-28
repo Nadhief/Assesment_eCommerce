@@ -138,7 +138,6 @@ const LandingPage = () => {
       <Box
         component="section"
         sx={{
-          p: 2,
           bgcolor: "#FCEED5",
           borderBottomLeftRadius: "30px",
           borderBottomRightRadius: "30px",
@@ -153,10 +152,8 @@ const LandingPage = () => {
         <Box
           component="section"
           sx={{
-            // p: 2,
             bgcolor: "#FCEED5",
             borderRadius: 7,
-            // border: '1px solid red'
           }}
         >
           <HeroExplore></HeroExplore>

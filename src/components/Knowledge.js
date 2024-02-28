@@ -17,15 +17,15 @@ const Knowledge = ({ list }) => {
         <Stack
           sx={{
             justifyContent: "space-between",
-            alignItems: "center",
+            flexDirection: { xs: "column", md: "row" },
           }}
-          direction="row"
         >
           <Typography
             variant="h5"
             sx={{
               color: "#003459",
               fontWeight: "bold",
+              mb: { xs: 2, md: 0 },
             }}
           >
             Useful Pet Knowledge
@@ -36,6 +36,8 @@ const Knowledge = ({ list }) => {
               border: "1px solid #003459",
               color: "#003459",
               borderRadius: 30,
+              width: { xs: "100%", md: "auto" },
+              mt: { xs: 2, md: 0 },
             }}
           >
             View More
@@ -50,7 +52,7 @@ const Knowledge = ({ list }) => {
                 <Box
                   //   maxHeight={490}
                   sx={{
-                    pt: 1,
+                    // pt: 1,
                     textAlign: "center",
                     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
                     borderRadius: 2,
@@ -59,7 +61,11 @@ const Knowledge = ({ list }) => {
                   <img
                     src={knowledge.image}
                     loading="lazy"
-                    style={{ borderRadius: "5%" }}
+                    style={{
+                      borderRadius: 10,
+                      objectFit: "contain",
+                      width: "100%",
+                    }}
                   />
                   <Box sx={{ textAlign: "start", pt: 2, ml: 1 }}>
                     <Chip

@@ -17,7 +17,7 @@ export default function HeroAdoption() {
   }));
   return (
     <Container maxWidth="xl">
-      <Box sx={{ pl: 5, pr: 5  }}>
+      <Box sx={{ pl: 5, pr: 5 }}>
         <Grid container spacing={2}>
           <Grid xs={12} lg={6} container justifyContent="center">
             <Box
@@ -60,7 +60,7 @@ export default function HeroAdoption() {
               <Box
                 sx={{ display: "flex", paddingTop: 4, justifyContent: "start" }}
               >
-                <Stack spacing={2} direction="row">
+                <Stack spacing={2} direction="row" sx={{ mb: 4 }}>
                   <Button
                     variant="outlined"
                     sx={{
@@ -88,7 +88,15 @@ export default function HeroAdoption() {
             justifyContent="center"
             sx={{ width: "50%" }}
           >
-            <Box sx={{ width: "100%" }}>
+            <Box
+              sx={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "flex-end",
+              }}
+            >
               <img
                 src={"/adoption.png"}
                 loading="lazy"

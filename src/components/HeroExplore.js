@@ -26,7 +26,15 @@ export default function HeroExplore() {
             justifyContent="center"
             sx={{ width: "50%" }}
           >
-            <Box sx={{ width: "100%" }}>
+            <Box
+              sx={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "flex-end",
+              }}
+            >
               <img
                 src={"/heroexplore.png"}
                 loading="lazy"
@@ -76,7 +84,7 @@ export default function HeroExplore() {
               <Box
                 sx={{ display: "flex", paddingTop: 4, justifyContent: "end" }}
               >
-                <Stack spacing={2} direction="row">
+                <Stack spacing={2} direction="row" sx={{ mb: 4 }}>
                   <Button
                     variant="outlined"
                     sx={{
