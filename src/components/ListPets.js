@@ -60,6 +60,7 @@ const ListPets = ({ list }) => {
                       src={pet.image}
                       loading="lazy"
                       style={{ borderRadius: "5%" }}
+                      alt=""
                     />
                     <Box sx={{ textAlign: "start", pt: 2, ml: 3 }}>
                       <Typography sx={{ fontWeight: "bold", color: "black" }}>
