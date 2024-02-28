@@ -5,16 +5,8 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import Paper from "@mui/material/Paper";
-import { experimentalStyled as styled } from "@mui/material/styles";
+
 export default function Hero() {
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
   return (
     <Container maxWidth="lg">
       <Box sx={{ width: "100%", pt: 10 }}>
@@ -53,6 +45,7 @@ export default function Hero() {
                   Thousands more fun!
                 </Typography>
                 <Typography variant="h6" sx={{ paddingTop: 2 }}>
+                <Typography variant="h6" sx={{ paddingTop: 2 }}>
                   Having a pet means you have more joy, a new friend, a happy
                   person who will always be with you to have fun. We have 200+
                   different pets that can meet your needs!
@@ -67,9 +60,18 @@ export default function Hero() {
                       color: "#003459",
                       borderRadius: 30,
                     }}
+                    sx={{
+                      border: "1px solid #003459",
+                      color: "#003459",
+                      borderRadius: 30,
+                    }}
                   >
                     View Intro
                   </Button>
+                  <Button
+                    variant="contained"
+                    sx={{ background: "#003459", borderRadius: 30 }}
+                  >
                   <Button
                     variant="contained"
                     sx={{ background: "#003459", borderRadius: 30 }}
@@ -103,6 +105,7 @@ export default function Hero() {
                 src={"/hero.png"}
                 loading="lazy"
                 style={{ objectFit: "cover", width: "100%" }}
+                alt=""
               />
             </Box>
           </Grid>

@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import Category from "./pages/Category";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/category" element={<Category />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

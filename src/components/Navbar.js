@@ -21,7 +21,7 @@ import Popper from "@mui/material/Popper";
 import MenuList from "@mui/material/MenuList";
 
 const pages = ["Home", "Category", "About", "Contact"];
-const options = ["VND", "IDR", "SGD", "MYR", "THB", "USD"];
+const options = ["IDR", "VND", "SGD", "MYR", "THB", "USD"];
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -52,7 +52,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   width: "100%",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     color: "gray",
@@ -231,10 +230,10 @@ function ResponsiveAppBar() {
                   onClick={handleClick}
                   sx={{
                     borderRadius: 20,
-
                     color: "black",
                   }}
                 >
+                  <img src="/flag.png" alt="" />
                   {options[selectedIndex]}
                 </Button>
                 <Button
@@ -246,7 +245,6 @@ function ResponsiveAppBar() {
                   onClick={handleToggle}
                   sx={{
                     borderRadius: 20,
-
                     color: "black",
                   }}
                 >
@@ -278,7 +276,6 @@ function ResponsiveAppBar() {
                           {options.map((option, index) => (
                             <MenuItem
                               key={option}
-                              disabled={index === 2}
                               selected={index === selectedIndex}
                               onClick={(event) =>
                                 handleMenuItemClick(event, index)
