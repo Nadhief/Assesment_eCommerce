@@ -97,7 +97,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar
-      position="fixed"
+      position="absolute"
       style={{ backgroundColor: "transparent", boxShadow: "none" }}
     >
       <Container>

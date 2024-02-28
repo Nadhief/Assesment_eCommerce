@@ -6,6 +6,8 @@ import HeroExplore from "../components/HeroExplore";
 import Container from "@mui/material/Container";
 import HeroAdoption from "../components/HeroAdoption";
 import Sponsor from "../components/Sponsor";
+import Knowledge from "../components/Knowledge";
+import Hidden from "@mui/material/Hidden";
 const petss = [
   {
     image: "/image 1.png",
@@ -106,6 +108,30 @@ const productss = [
     age: "02 months",
   },
 ];
+const knowledgess = [
+  {
+    image: "/knowledge1.png",
+    title: "What is a Pomeranian? How to Identify Pomeranian Dogs",
+    deskripsi:
+      "The Pomeranian, also known as the Pomeranian (Pom dog), is always in the top of the cutest pets. Not only that, the small, lovely, smart, friendly, and skillful circus dog breed.",
+    badge: "Pet Knowledge",
+  },
+  {
+    image: "/knowledge2.png",
+    title: "Dog Diet You Need To Know",
+    deskripsi:
+      "Dividing a dog's diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially newborn puppies with relatively weak resistance.",
+    badge: "Pet Knowledge",
+  },
+  {
+    image: "/knowledge3.png",
+    title:
+      "Why Dogs Bite and Destroy Furniture and How to Prevent It Effectively",
+    deskripsi:
+      "Dog bites are common during development. However, no one wants to see their furniture or important items being bitten by a dog.",
+    badge: "Pet Knowledge",
+  },
+];
 const LandingPage = () => {
   return (
     <>
@@ -123,7 +149,7 @@ const LandingPage = () => {
       <Box>
         <ListPets list={petss}></ListPets>
       </Box>
-      <Container maxWidth="xl" sx={{ pt: 8 }}>
+      <Container maxWidth="lg" sx={{ pt: 8 }}>
         <Box
           component="section"
           sx={{
@@ -136,25 +162,34 @@ const LandingPage = () => {
           <HeroExplore></HeroExplore>
         </Box>
       </Container>
-      <Box>
-        <ListPets list={productss}></ListPets>
-      </Box>
+      <Hidden lgDown>
+        <Box>
+          <ListPets list={productss}></ListPets>
+        </Box>
+      </Hidden>
+      <Hidden lgDown>
+        <Container maxWidth="lg" sx={{ pt: 8 }}>
+          <Sponsor></Sponsor>
+        </Container>
+      </Hidden>
+      <Hidden lgDown>
+        <Container maxWidth="lg" sx={{ pt: 8 }}>
+          <Box
+            component="section"
+            sx={{
+              // p: 2,
+              bgcolor: "#FCEED5",
+              borderRadius: 7,
+              // border: '1px solid red'
+            }}
+          >
+            <HeroAdoption></HeroAdoption>
+          </Box>
+        </Container>
+      </Hidden>
       <Container maxWidth="lg" sx={{ pt: 8 }}>
         <Box>
-          <Sponsor></Sponsor>
-        </Box>
-      </Container>
-      <Container maxWidth="xl" sx={{ pt: 8 }}>
-        <Box
-          component="section"
-          sx={{
-            // p: 2,
-            bgcolor: "#FCEED5",
-            borderRadius: 7,
-            // border: '1px solid red'
-          }}
-        >
-          <HeroAdoption></HeroAdoption>
+          <Knowledge list={knowledgess}></Knowledge>
         </Box>
       </Container>
     </>

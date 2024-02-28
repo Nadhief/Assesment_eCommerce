@@ -39,7 +39,7 @@ export default function HeroAdoption() {
                   Adoption
                 </Typography>
                 <Typography
-                  variant="h3"
+                  variant="h4"
                   gutterBottom
                   sx={{
                     fontWeight: "bold",
