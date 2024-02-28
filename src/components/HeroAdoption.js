@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import { experimentalStyled as styled } from "@mui/material/styles";
-export default function Hero() {
+export default function HeroAdoption() {
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,
@@ -16,8 +16,8 @@ export default function Hero() {
     color: theme.palette.text.secondary,
   }));
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ p:2, pt: 10 }}>
+    <Container maxWidth="xl">
+      <Box sx={{ pl: 5, pr: 5  }}>
         <Grid container spacing={2}>
           <Grid xs={12} lg={6} container justifyContent="center">
             <Box
@@ -27,7 +27,7 @@ export default function Hero() {
                 justifyContent: "center",
               }}
             >
-              <Stack>
+              <Stack sx={{ alignItems: "start" }}>
                 <Typography
                   variant="h2"
                   gutterBottom
@@ -36,33 +36,45 @@ export default function Hero() {
                     color: "#002A48",
                   }}
                 >
-                  One More Friend
+                  Adoption
                 </Typography>
                 <Typography
                   variant="h3"
                   gutterBottom
-                  sx={{ fontWeight: "bold", color: "#002A48" }}
+                  sx={{
+                    fontWeight: "bold",
+                    color: "#002A48",
+                    textAlign: "start",
+                  }}
                 >
-                  Thousands more fun!
+                  We Need Help. So Do They.
                 </Typography>
                 <Typography
                   variant="h6"
-                  sx={{ paddingTop: 2}}
+                  sx={{ paddingTop: 2, textAlign: "start" }}
                 >
-                  Having a pet means you have more joy, a new friend, a happy
-                  person who will always be with you to have fun. We have 200+
-                  different pets that can meet your needs!
+                  Adopt a pet and give it a home, it will be love you back
+                  unconditionally.
                 </Typography>
               </Stack>
-              <Box sx={{ display: "flex", paddingTop: 4 }}>
+              <Box
+                sx={{ display: "flex", paddingTop: 4, justifyContent: "start" }}
+              >
                 <Stack spacing={2} direction="row">
                   <Button
                     variant="outlined"
-                    sx={{ border: "1px solid #003459", color: "#003459", borderRadius:30 }}
+                    sx={{
+                      border: "1px solid #003459",
+                      color: "#003459",
+                      borderRadius: 30,
+                    }}
                   >
                     View Intro
                   </Button>
-                  <Button variant="contained" sx={{ background: "#003459", borderRadius:30 }}>
+                  <Button
+                    variant="contained"
+                    sx={{ background: "#003459", borderRadius: 30 }}
+                  >
                     Explore Now
                   </Button>
                 </Stack>
@@ -78,7 +90,7 @@ export default function Hero() {
           >
             <Box sx={{ width: "100%" }}>
               <img
-                src={"/hero.png"}
+                src={"/adoption.png"}
                 loading="lazy"
                 style={{ objectFit: "cover", width: "100%" }}
               />

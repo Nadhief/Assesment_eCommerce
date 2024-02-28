@@ -2,6 +2,10 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Hero from "../components/Hero";
 import ListPets from "../components/ListPets";
+import HeroExplore from "../components/HeroExplore";
+import Container from "@mui/material/Container";
+import HeroAdoption from "../components/HeroAdoption";
+import Sponsor from "../components/Sponsor";
 const petss = [
   {
     image: "/image 1.png",
@@ -116,12 +120,43 @@ const LandingPage = () => {
       >
         <Hero></Hero>
       </Box>
-      <Box sx={{ height: "auto" }}>
+      <Box>
         <ListPets list={petss}></ListPets>
       </Box>
-      <Box sx={{ height: "auto" }}>
+      <Container maxWidth="xl" sx={{ pt: 8 }}>
+        <Box
+          component="section"
+          sx={{
+            // p: 2,
+            bgcolor: "#FCEED5",
+            borderRadius: 7,
+            // border: '1px solid red'
+          }}
+        >
+          <HeroExplore></HeroExplore>
+        </Box>
+      </Container>
+      <Box>
         <ListPets list={productss}></ListPets>
       </Box>
+      <Container maxWidth="lg" sx={{ pt: 8 }}>
+        <Box>
+          <Sponsor></Sponsor>
+        </Box>
+      </Container>
+      <Container maxWidth="xl" sx={{ pt: 8 }}>
+        <Box
+          component="section"
+          sx={{
+            // p: 2,
+            bgcolor: "#FCEED5",
+            borderRadius: 7,
+            // border: '1px solid red'
+          }}
+        >
+          <HeroAdoption></HeroAdoption>
+        </Box>
+      </Container>
     </>
   );
 };

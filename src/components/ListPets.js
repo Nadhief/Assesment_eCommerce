@@ -2,8 +2,8 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
@@ -18,8 +18,8 @@ const ListPets = ({ list }) => {
   }));
 
   return (
-    <Container maxWidth="xl">
-      <Box sx={{ ml: 5, mr: 5, pt: 8 }}>
+    <Container maxWidth="lg">
+      <Box sx={{ pt: 8 }}>
         <Box>
           <Typography variant="h6">Whats new?</Typography>
         </Box>
