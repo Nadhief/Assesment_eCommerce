@@ -1,6 +1,5 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
@@ -13,6 +12,8 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Pagination from "@mui/material/Pagination";
+import Hidden from "@mui/material/Hidden";
+import Link from "@mui/material/Link";
 const ListPets = ({ list }) => {
   const [min, setMin] = React.useState("");
   const [max, setMax] = React.useState("");
@@ -21,114 +22,120 @@ const ListPets = ({ list }) => {
     setMin(event.target.value);
     setMax(event.target.value);
   };
+
   return (
     <>
-      <Grid container spacing={2} sx={{ flexGrow: 1, gap: 0 }}>
-        <Grid xs={4}>
-          <Box sx={{ pt: 6 }}>
-            <Typography
-              variant="h5"
-              sx={{
-                color: "#003459",
-                fontWeight: "bold",
-              }}
-            >
-              Filter
-            </Typography>
-          </Box>
-          <Stack sx={{ pt: 3 }}>
-            <Box sx={{ mb: 3 }}>
+      <Grid container spacing={2} sx={{ flexGrow: 1, gap: 0, pl: 2 }}>
+        <Hidden mdDown>
+          <Grid xs={3}>
+            <Box sx={{ pt: 6 }}>
               <Typography
-                variant="h7"
+                variant="h5"
                 sx={{
                   color: "#003459",
                   fontWeight: "bold",
                 }}
               >
-                Gender
+                Filter
               </Typography>
-              <FormGroup>
-                <FormControlLabel control={<Checkbox />} label="Male" />
-                <FormControlLabel control={<Checkbox />} label="Female" />
-              </FormGroup>
             </Box>
-            <Box sx={{ mb: 3 }}>
-              <Typography
-                variant="h7"
-                sx={{
-                  color: "#003459",
-                  fontWeight: "bold",
-                }}
-              >
-                Color
-              </Typography>
-              <FormGroup>
-                <FormControlLabel control={<Checkbox />} label="Red" />
-                <FormControlLabel control={<Checkbox />} label="Apricot" />
-                <FormControlLabel control={<Checkbox />} label="Black" />
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label="Black & White"
-                />
-                <FormControlLabel control={<Checkbox />} label="Silver" />
-                <FormControlLabel control={<Checkbox />} label="Tan" />
-              </FormGroup>
-            </Box>
-            <Box sx={{ mb: 3 }}>
-              <Typography
-                variant="h7"
-                sx={{
-                  color: "#003459",
-                  fontWeight: "bold",
-                }}
-              >
-                Price
-              </Typography>
-              <Stack direction={"row"} sx={{ gap: 1 }}>
-                <FormControl sx={{ width: "45%" }}>
-                  <InputLabel>min</InputLabel>
-                  <Select value={min} label="min" onChange={handleChange}>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl sx={{ width: "45%" }}>
-                  <InputLabel>max</InputLabel>
-                  <Select value={max} label="max" onChange={handleChange}>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-              </Stack>
-            </Box>
-            <Box sx={{ mb: 3 }}>
-              <Typography
-                variant="h7"
-                sx={{
-                  color: "#003459",
-                  fontWeight: "bold",
-                }}
-              >
-                Breed
-              </Typography>
-              <FormGroup>
-                <FormControlLabel control={<Checkbox />} label="Small" />
-                <FormControlLabel control={<Checkbox />} label="Medium" />
-                <FormControlLabel control={<Checkbox />} label="Large" />
-              </FormGroup>
-            </Box>
-          </Stack>
-        </Grid>
-        <Grid xs={8}>
+            <Stack sx={{ pt: 3 }}>
+              <Box sx={{ mb: 3 }}>
+                <Typography
+                  variant="h7"
+                  sx={{
+                    color: "#003459",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Gender
+                </Typography>
+                <FormGroup>
+                  <FormControlLabel control={<Checkbox />} label="Male" />
+                  <FormControlLabel control={<Checkbox />} label="Female" />
+                </FormGroup>
+              </Box>
+              <Box sx={{ mb: 3 }}>
+                <Typography
+                  variant="h7"
+                  sx={{
+                    color: "#003459",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Color
+                </Typography>
+                <FormGroup>
+                  <FormControlLabel control={<Checkbox />} label="Red" />
+                  <FormControlLabel control={<Checkbox />} label="Apricot" />
+                  <FormControlLabel control={<Checkbox />} label="Black" />
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label="Black & White"
+                  />
+                  <FormControlLabel control={<Checkbox />} label="Silver" />
+                  <FormControlLabel control={<Checkbox />} label="Tan" />
+                </FormGroup>
+              </Box>
+              <Box sx={{ mb: 3 }}>
+                <Typography
+                  variant="h7"
+                  sx={{
+                    color: "#003459",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Price
+                </Typography>
+                <Stack direction={"row"} sx={{ gap: 1 }}>
+                  <FormControl sx={{ width: "45%" }}>
+                    <InputLabel>min</InputLabel>
+                    <Select value={min} label="min" onChange={handleChange}>
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <FormControl sx={{ width: "45%" }}>
+                    <InputLabel>max</InputLabel>
+                    <Select value={max} label="max" onChange={handleChange}>
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Stack>
+              </Box>
+              <Box sx={{ mb: 3 }}>
+                <Typography
+                  variant="h7"
+                  sx={{
+                    color: "#003459",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Breed
+                </Typography>
+                <FormGroup>
+                  <FormControlLabel control={<Checkbox />} label="Small" />
+                  <FormControlLabel control={<Checkbox />} label="Medium" />
+                  <FormControlLabel control={<Checkbox />} label="Large" />
+                </FormGroup>
+              </Box>
+            </Stack>
+          </Grid>
+        </Hidden>
+        <Grid xs={12} md={9}>
           <Box sx={{ pt: 6 }}>
             <Box>
               <Stack
                 sx={{
                   justifyContent: "space-between",
                   alignItems: "center",
-                  flexDirection: { xs: "column", md: "row" },
+                  flexDirection: {
+                    xs: "column",
+                    md: "row",
+                  },
                 }}
               >
                 <Stack direction={"row"} sx={{ gap: 2 }}>
@@ -154,14 +161,14 @@ const ListPets = ({ list }) => {
                     mt: { xs: 2, md: 0 },
                   }}
                 >
-                  View More
+                  Sort by: Popular
                 </Button>
               </Stack>
               <Box sx={{ flexGrow: 1, pt: 3 }}>
                 <Grid container spacing={2}>
                   {list.map((pet, index) => (
-                    <>
-                      <Grid item xs={6} md={4} lg={4}>
+                    <Grid key={index} item xs={6} md={4} lg={4}>
+                      <Link href={`/detail/${index}`} underline="none">
                         <Box
                           sx={{
                             textAlign: "center",
@@ -196,8 +203,8 @@ const ListPets = ({ list }) => {
                             </Typography>
                           </Box>
                         </Box>
-                      </Grid>
-                    </>
+                      </Link>
+                    </Grid>
                   ))}
                 </Grid>
               </Box>
@@ -206,8 +213,8 @@ const ListPets = ({ list }) => {
                 direction={"row"}
                 sx={{
                   justifyContent: "center",
-                  pt:3,
-                  pb:6,
+                  pt: 3,
+                  pb: 6,
                 }}
               >
                 <Pagination count={10} color="primary" />
