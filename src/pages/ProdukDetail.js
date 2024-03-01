@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Container from "@mui/material/Container";
 import ProfilePet from "../components/ProfilePet";
 import Customer from "../components/Customer";
-
+import ListPets from "../components/ListPets";
 const ProdukDetail = () => {
   const petss = [
     {
@@ -55,6 +55,32 @@ const ProdukDetail = () => {
       age: "02 months",
     },
   ];
+  const petsss = [
+    {
+      image: "/image 1.png",
+      title: "MO231 - Pomeranian White",
+      gene: "male",
+      age: "02 months",
+    },
+    {
+      image: "/image 2.png",
+      title: "MO502 - Poodle Tiny Yellow",
+      gene: "male",
+      age: "02 months",
+    },
+    {
+      image: "/image 3.png",
+      title: "MO102 - Poodle Tiny Sepia",
+      gene: "male",
+      age: "02 months",
+    },
+    {
+      image: "/image 4.png",
+      title: "MO512 - Alaskan Malamute Grey",
+      gene: "male",
+      age: "02 months",
+    },
+  ];
 
   let { id } = useParams();
   const selectedPet = petss[id];
@@ -63,6 +89,9 @@ const ProdukDetail = () => {
       <Container maxWidth="lg" sx={{ pt: 12 }}>
         <ProfilePet pet={selectedPet}></ProfilePet>
         <Customer></Customer>
+      </Container>
+      <Container sx={{ pb:10 }}>
+        <ListPets list={petsss} title="Whats new?" desc="See More Puppies"></ListPets>
       </Container>
     </>
   );
