@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Container from "@mui/material/Container";
 import ProfilePet from "../components/ProfilePet";
+import Customer from "../components/Customer";
 
 const ProdukDetail = () => {
   const petss = [
@@ -54,12 +55,14 @@ const ProdukDetail = () => {
       age: "02 months",
     },
   ];
+
   let { id } = useParams();
   const selectedPet = petss[id];
   return (
     <>
       <Container maxWidth="lg" sx={{ pt: 12 }}>
         <ProfilePet pet={selectedPet}></ProfilePet>
+        <Customer></Customer>
       </Container>
     </>
   );
