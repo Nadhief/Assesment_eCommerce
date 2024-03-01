@@ -19,6 +19,7 @@ import Grow from "@mui/material/Grow";
 import Paper from "@mui/material/Paper";
 import Popper from "@mui/material/Popper";
 import MenuList from "@mui/material/MenuList";
+import { Stack } from "@mui/material";
 
 const pages = ["Home", "Category", "About", "Contact"];
 const options = ["IDR", "VND", "SGD", "MYR", "THB", "USD"];
@@ -97,23 +98,27 @@ function ResponsiveAppBar() {
   return (
     <AppBar
       position="absolute"
-      style={{ backgroundColor: "transparent", boxShadow: "none" }}
+      style={{
+        backgroundColor: "transparent",
+        boxShadow: "none",
+        marginTop: 8,
+      }}
     >
       <Container>
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ gap: "15px" }}>
           <Typography
             variant="h6"
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
             sx={{
-              mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              flexGrow: 1,
             }}
           >
             <img src={"/logo.png"} alt="" />
@@ -126,7 +131,7 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="default"
             >
               <MenuIcon />
             </IconButton>
@@ -176,7 +181,20 @@ function ResponsiveAppBar() {
             <img src="/logo.png" alt="" />
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+            <IconButton>
+              <SearchIcon />
+            </IconButton>
+          </Box>
+
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+
+              justifyContent: "space-between",
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
@@ -188,12 +206,6 @@ function ResponsiveAppBar() {
             ))}
 
             <Toolbar>
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ flexGrow: 2, display: { xs: "none", sm: "block" } }}
-              ></Typography>
               <Search>
                 <SearchIconWrapper>
                   <SearchIcon />
@@ -203,98 +215,101 @@ function ResponsiveAppBar() {
                   inputProps={{ "aria-label": "search" }}
                 />
               </Search>
-              <Toolbar>
-                <Button
-                  variant="contained"
-                  sx={{
-                    borderRadius: 20,
-                    backgroundColor: "#203354",
-                  }}
-                >
-                  Join the community
-                </Button>
-              </Toolbar>
+            </Toolbar>
 
-              <ButtonGroup
-                variant="text"
-                ref={anchorRef}
-                aria-label="Button group with a nested menu"
+            <Toolbar>
+              <Button
+                variant="contained"
                 sx={{
                   borderRadius: 20,
-                  backgroundColor: "transparent",
-                  color: "black",
-                  boxShadow: "none",
+                  backgroundColor: "#203354",
                 }}
               >
-                <Button
-                  onClick={handleClick}
-                  sx={{
-                    borderRadius: 20,
-                    color: "black",
-                  }}
-                >
-                  <img src="/flag.png" alt="" />
-                  {options[selectedIndex]}
-                </Button>
-                <Button
-                  size="small"
-                  aria-controls={open ? "split-button-menu" : undefined}
-                  aria-expanded={open ? "true" : undefined}
-                  aria-label="select merge strategy"
-                  aria-haspopup="menu"
-                  onClick={handleToggle}
-                  sx={{
-                    borderRadius: 20,
-                    color: "black",
-                  }}
-                >
-                  <ArrowDropDownIcon />
-                </Button>
-              </ButtonGroup>
-
-              <Popper
-                sx={{
-                  zIndex: 1,
-                }}
-                open={open}
-                anchorEl={anchorRef.current}
-                role={undefined}
-                transition
-                disablePortal
-              >
-                {({ TransitionProps, placement }) => (
-                  <Grow
-                    {...TransitionProps}
-                    style={{
-                      transformOrigin:
-                        placement === "bottom" ? "center top" : "center bottom",
-                    }}
-                  >
-                    <Paper>
-                      <ClickAwayListener onClickAway={handleClose}>
-                        <MenuList id="split-button-menu" autoFocusItem>
-                          {options.map((option, index) => (
-                            <MenuItem
-                              key={option}
-                              selected={index === selectedIndex}
-                              onClick={(event) =>
-                                handleMenuItemClick(event, index)
-                              }
-                            >
-                              {option}
-                            </MenuItem>
-                          ))}
-                        </MenuList>
-                      </ClickAwayListener>
-                    </Paper>
-                  </Grow>
-                )}
-              </Popper>
+                Join the community
+              </Button>
             </Toolbar>
+
+            <ButtonGroup
+              variant="text"
+              ref={anchorRef}
+              aria-label="Button group with a nested menu"
+              sx={{
+                borderRadius: 20,
+                backgroundColor: "transparent",
+                color: "black",
+                boxShadow: "none",
+              }}
+            >
+              <Button
+                onClick={handleClick}
+                sx={{
+                  borderRadius: 20,
+                  color: "black",
+                }}
+              >
+                <img src="/flag.png" alt="" />
+                {options[selectedIndex]}
+              </Button>
+
+              <Button
+                size="small"
+                aria-controls={open ? "split-button-menu" : undefined}
+                aria-expanded={open ? "true" : undefined}
+                aria-label="select merge strategy"
+                aria-haspopup="menu"
+                onClick={handleToggle}
+                sx={{
+                  borderRadius: 20,
+                  color: "black",
+                }}
+              >
+                <ArrowDropDownIcon />
+              </Button>
+            </ButtonGroup>
+
+            <Popper
+              sx={{
+                zIndex: 1,
+              }}
+              open={open}
+              anchorEl={anchorRef.current}
+              role={undefined}
+              transition
+              disablePortal
+            >
+              {({ TransitionProps, placement }) => (
+                <Grow
+                  {...TransitionProps}
+                  style={{
+                    transformOrigin:
+                      placement === "bottom" ? "center top" : "center bottom",
+                  }}
+                >
+                  <Paper>
+                    <ClickAwayListener onClickAway={handleClose}>
+                      <MenuList id="split-button-menu" autoFocusItem>
+                        {options.map((option, index) => (
+                          <MenuItem
+                            key={option}
+                            selected={index === selectedIndex}
+                            onClick={(event) =>
+                              handleMenuItemClick(event, index)
+                            }
+                          >
+                            {option}
+                          </MenuItem>
+                        ))}
+                      </MenuList>
+                    </ClickAwayListener>
+                  </Paper>
+                </Grow>
+              )}
+            </Popper>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;
