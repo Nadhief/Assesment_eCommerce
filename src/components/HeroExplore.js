@@ -5,10 +5,26 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import PlayCircleOutlinedIcon from "@mui/icons-material/PlayCircleOutlined";
+
 export default function HeroExplore() {
   return (
-    <Container maxWidth="xl">
-      <Box sx={{ pl: 5, pr: 5 }}>
+    <Container
+      maxWidth="xl"
+      sx={{
+        backgroundImage: `url(/herosxploreblue.png)`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "bottom left",
+        overflow: "hidden",
+        borderBottomLeftRadius: 30,
+      }}
+    >
+      <Box
+        sx={{
+          pl: 5,
+          pr: 5,
+        }}
+      >
         <Grid container spacing={2}>
           <Grid
             xs={12}
@@ -42,7 +58,7 @@ export default function HeroExplore() {
                 justifyContent: "center",
               }}
             >
-              <Stack sx={{ alignItems: "end" }}>
+              <Stack sx={{ alignItems: "end", pt: 5 }}>
                 <Typography
                   variant="h2"
                   gutterBottom
@@ -66,7 +82,7 @@ export default function HeroExplore() {
                 </Typography>
                 <Typography
                   variant="h6"
-                  sx={{ paddingTop: 2, textAlign: "end" }}
+                  sx={{ paddingTop: 2, textAlign: "end", fontSize: "16px" }}
                 >
                   Having a pet means you have more joy, a new friend, a happy
                   person who will always be with you to have fun. We have 200+
@@ -83,13 +99,19 @@ export default function HeroExplore() {
                       border: "1px solid #003459",
                       color: "#003459",
                       borderRadius: 30,
+                      gap: 1,
+                      textTransform: "none",
                     }}
                   >
-                    View Intro
+                    View Intro <PlayCircleOutlinedIcon />
                   </Button>
                   <Button
                     variant="contained"
-                    sx={{ background: "#003459", borderRadius: 30 }}
+                    sx={{
+                      background: "#003459",
+                      borderRadius: 30,
+                      textTransform: "none",
+                    }}
                   >
                     Explore Now
                   </Button>

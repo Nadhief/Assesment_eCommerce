@@ -8,104 +8,105 @@ import HeroAdoption from "../components/HeroAdoption";
 import Sponsor from "../components/Sponsor";
 import Knowledge from "../components/Knowledge";
 import Hidden from "@mui/material/Hidden";
+import ListProduct from "../components/ListProduct";
 const petss = [
   {
     image: "/image 1.png",
     title: "MO231 - Pomeranian White",
-    gene: "male",
+    gene: "Male",
     age: "02 months",
   },
   {
     image: "/image 2.png",
     title: "MO502 - Poodle Tiny Yellow",
-    gene: "male",
+    gene: "Male",
     age: "02 months",
   },
   {
     image: "/image 3.png",
     title: "MO102 - Poodle Tiny Sepia",
-    gene: "male",
+    gene: "Male",
     age: "02 months",
   },
   {
     image: "/image 4.png",
     title: "MO512 - Alaskan Malamute Grey",
-    gene: "male",
+    gene: "Male",
     age: "02 months",
   },
   {
     image: "/image 5.png",
     title: "MO231 - Pembroke Corgi Cream",
-    gene: "male",
+    gene: "Male",
     age: "02 months",
   },
   {
     image: "/image 6.png",
     title: "MO502 - Pembroke Corgi Tricolor",
-    gene: "male",
+    gene: "Male",
     age: "02 months",
   },
   {
     image: "/image 7.png",
     title: "MO231 - Pomeranian White",
-    gene: "male",
+    gene: "Male",
     age: "02 months",
   },
   {
     image: "/image 8.png",
     title: "MO512 - Poodle Tiny Dairy Cow",
-    gene: "male",
+    gene: "Male",
     age: "02 months",
   },
 ];
 const productss = [
   {
     image: "/produk1.png",
-    title: "MO231 - Pomeranian White",
-    gene: "male",
-    age: "02 months",
+    title: "Reflex Plus Adult Cat Food and Salmon ",
+    product: "Dog Food",
+    size: "385gm",
   },
   {
     image: "/produk2.png",
-    title: "MO502 - Poodle Tiny Yellow",
-    gene: "male",
-    age: "02 months",
+    title: "Reflex Plus Adult Cat Food and Salmon",
+    product: "Dog Food",
+    size: "385gm",
   },
   {
     image: "/produk3.png",
-    title: "MO102 - Poodle Tiny Sepia",
-    gene: "male",
-    age: "02 months",
+    title: "Cat scratching ball toy kitten sisal rope ball",
+    product: "Dog Food",
+    size: "385gm",
   },
   {
     image: "/produk4.png",
-    title: "MO512 - Alaskan Malamute Grey",
-    gene: "male",
-    age: "02 months",
+    title: "Cute Pet Cat Warm Nest",
+    product: "Dog Food",
+    size: "385gm",
   },
   {
     image: "/produk5.png",
-    title: "MO231 - Pembroke Corgi Cream",
-    gene: "male",
-    age: "02 months",
+    title: "NaturVet Dogs - Omega-Gold Plus Salmon Oil",
+    product: "Dog Food",
+    size: "385gm",
   },
   {
     image: "/produk6.png",
-    title: "MO502 - Pembroke Corgi Tricolor",
-    gene: "male",
-    age: "02 months",
+    title: "Costumes Fashion Pet Clother Cowboy Rider",
+    product: "Dog Food",
+    size: "385gm",
   },
   {
     image: "/produk7.png",
-    title: "MO231 - Pomeranian White",
-    gene: "male",
-    age: "02 months",
+    title: "Costumes Chicken Drumsti ck Headband",
+    product: "Dog Food",
+    size: "385gm",
   },
   {
     image: "/produk8.png",
-    title: "MO512 - Poodle Tiny Dairy Cow",
-    gene: "male",
-    age: "02 months",
+    title: "Plush Pet Toy",
+    product: "Dog Food",
+    size: "385gm",
   },
 ];
 const knowledgess = [
@@ -120,7 +121,7 @@ const knowledgess = [
     image: "/knowledge2.png",
     title: "Dog Diet You Need To Know",
     deskripsi:
-      "Dividing a dog's diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially newborn puppies with relatively weak resistance.",
+      "Dividing a dog's diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially newborn puppies with relatively weak resistance. Dividing a dog's diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially newborn puppies with relatively weak resistance.",
     badge: "Pet Knowledge",
   },
   {
@@ -141,19 +142,33 @@ const LandingPage = () => {
           bgcolor: "#FCEED5",
           borderBottomLeftRadius: "30px",
           borderBottomRightRadius: "30px",
+          position: "relative",
+          backgroundImage: `url(/heroblue.png)`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right 17% bottom 0",
+          backgroundSize: "35%",
         }}
       >
         <Hero></Hero>
       </Box>
       <Box>
-        <ListPets list={petss}></ListPets>
+        <ListPets
+          list={petss}
+          title="Whats new?"
+          desc="Take A Look At Some Of Our Pets"
+        ></ListPets>
       </Box>
       <Container maxWidth="lg" sx={{ pt: 8 }}>
         <Box
           component="section"
           sx={{
-            bgcolor: "#FCEED5",
+            position: "relative",
+            bgcolor: "#003459",
             borderRadius: 7,
+            backgroundImage: `url(/heroexplorecream.png)`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right",
+            backgroundSize: "57%",
           }}
         >
           <HeroExplore></HeroExplore>
@@ -161,7 +176,7 @@ const LandingPage = () => {
       </Container>
       <Hidden lgDown>
         <Box>
-          <ListPets list={productss}></ListPets>
+          <ListProduct list={productss}></ListProduct>
         </Box>
       </Hidden>
       <Hidden lgDown>
@@ -174,17 +189,19 @@ const LandingPage = () => {
           <Box
             component="section"
             sx={{
-              // p: 2,
-              bgcolor: "#FCEED5",
+              bgcolor: "#FFB775",
               borderRadius: 7,
-              // border: '1px solid red'
+              position: "relative",
+              backgroundImage: `url(/heroadoptioncream.png)`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "left",
             }}
           >
             <HeroAdoption></HeroAdoption>
           </Box>
         </Container>
       </Hidden>
-      <Container maxWidth="lg" sx={{ pt: 8, mb:5 }}>
+      <Container maxWidth="lg" sx={{ pt: 8, mb: 5 }}>
         <Box>
           <Knowledge list={knowledgess}></Knowledge>
         </Box>

@@ -5,10 +5,20 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import PlayCircleOutlinedIcon from "@mui/icons-material/PlayCircleOutlined";
 
 export default function HeroAdoption() {
   return (
-    <Container maxWidth="xl">
+    <Container
+      maxWidth="xl"
+      sx={{
+        backgroundImage: `url(/heroadoptionorange.png)`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "bottom right",
+        overflow: "hidden",
+        borderBottomLeftRadius: 30,
+      }}
+    >
       <Box sx={{ pl: 5, pr: 5 }}>
         <Grid container spacing={2}>
           <Grid xs={12} lg={6} container justifyContent="center">
@@ -19,7 +29,7 @@ export default function HeroAdoption() {
                 justifyContent: "center",
               }}
             >
-              <Stack sx={{ alignItems: "start" }}>
+              <Stack sx={{ alignItems: "start", pt: 5 }}>
                 <Typography
                   variant="h2"
                   gutterBottom
@@ -43,7 +53,12 @@ export default function HeroAdoption() {
                 </Typography>
                 <Typography
                   variant="h6"
-                  sx={{ paddingTop: 2, textAlign: "start" }}
+                  sx={{
+                    paddingTop: 2,
+                    textAlign: "start",
+                    fontSize: "16px",
+                    width: { xs: "100%", md: "60%" },
+                  }}
                 >
                   Adopt a pet and give it a home, it will be love you back
                   unconditionally.
@@ -59,13 +74,19 @@ export default function HeroAdoption() {
                       border: "1px solid #003459",
                       color: "#003459",
                       borderRadius: 30,
+                      gap: 1,
+                      textTransform: "none",
                     }}
                   >
-                    View Intro
+                    View Intro <PlayCircleOutlinedIcon />
                   </Button>
                   <Button
                     variant="contained"
-                    sx={{ background: "#003459", borderRadius: 30 }}
+                    sx={{
+                      background: "#003459",
+                      borderRadius: 30,
+                      textTransform: "none",
+                    }}
                   >
                     Explore Now
                   </Button>
@@ -87,12 +108,13 @@ export default function HeroAdoption() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "flex-end",
+                // border:'1px solid black'
               }}
             >
               <img
                 src={"/adoption.png"}
                 loading="lazy"
-                style={{ objectFit: "cover", width: "100%" }}
+                style={{ objectFit: "contain", width: "110%" }}
                 alt=""
               />
             </Box>

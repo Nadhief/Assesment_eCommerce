@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import { experimentalStyled as styled } from "@mui/material/styles";
-
+import PlayCircleOutlinedIcon from "@mui/icons-material/PlayCircleOutlined";
 export default function HeroExplore() {
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -102,13 +102,13 @@ export default function HeroExplore() {
                   justifyContent: "center",
                 }}
               >
-                <Stack sx={{ alignItems: "end" }}>
+                <Stack sx={{ alignItems: "end", pt: 5 }}>
                   <Typography
                     variant="h2"
                     gutterBottom
                     sx={{
                       fontWeight: "bold",
-                      color: "#002A48",
+                      color: "#fff",
                     }}
                   >
                     One More Friend
@@ -118,7 +118,7 @@ export default function HeroExplore() {
                     gutterBottom
                     sx={{
                       fontWeight: "bold",
-                      color: "#002A48",
+                      color: "#fff",
                       textAlign: "end",
                     }}
                   >
@@ -126,7 +126,7 @@ export default function HeroExplore() {
                   </Typography>
                   <Typography
                     variant="h6"
-                    sx={{ paddingTop: 2, textAlign: "end" }}
+                    sx={{ paddingTop: 2, textAlign: "end", color: "#fff" }}
                   >
                     Having a pet means you have more joy, a new friend, a happy
                     person who will always be with you to have fun. We have 200+
@@ -140,16 +140,23 @@ export default function HeroExplore() {
                     <Button
                       variant="outlined"
                       sx={{
-                        border: "1px solid #003459",
-                        color: "#003459",
+                        border: "1px solid #fff",
+                        color: "#fff",
                         borderRadius: 30,
+                        gap: 1,
+                        textTransform: "none",
                       }}
                     >
-                      View Intro
+                      View Intro <PlayCircleOutlinedIcon />
                     </Button>
                     <Button
                       variant="contained"
-                      sx={{ background: "#003459", borderRadius: 30 }}
+                      sx={{
+                        background: "#fff",
+                        borderRadius: 30,
+                        color: "black",
+                        textTransform: "none",
+                      }}
                     >
                       Explore Now
                     </Button>

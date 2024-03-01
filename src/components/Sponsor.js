@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 const Sponsor = () => {
   return (
     <Box sx={{ width: "100%" }}>
@@ -32,9 +33,14 @@ const Sponsor = () => {
             border: "1px solid #003459",
             color: "#003459",
             borderRadius: 30,
+            width: { xs: "100%", md: "auto" },
+            mt: { xs: 2, md: 0 },
+            gap: 1,
+            textTransform: "none",
           }}
         >
           View More
+          <ArrowForwardIosOutlinedIcon sx={{ fontSize: "10px" }} />
         </Button>
       </Stack>
       <Stack direction="row" spacing={2} sx={{ pt: 4 }}>

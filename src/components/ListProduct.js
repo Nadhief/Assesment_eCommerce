@@ -8,12 +8,14 @@ import Grid from "@mui/material/Grid";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import Link from "@mui/material/Link";
 
-const ListPets = ({ list, title, desc }) => {
+const ListProduct = ({ list }) => {
   return (
     <Container maxWidth="lg">
       <Box sx={{ pt: 8 }}>
         <Box>
-          <Typography sx={{ fontSize: "16px" }}>{title}</Typography>
+          <Typography sx={{ fontSize: "16px" }}>
+            Hard to choose right products for your pets?
+          </Typography>
           <Stack
             sx={{
               justifyContent: "space-between",
@@ -29,7 +31,7 @@ const ListPets = ({ list, title, desc }) => {
                 fontSize: "24px",
               }}
             >
-              {desc}
+              Our Products
             </Typography>
             <Button
               variant="outlined"
@@ -49,7 +51,7 @@ const ListPets = ({ list, title, desc }) => {
           </Stack>
           <Box sx={{ flexGrow: 1, pt: 5 }}>
             <Grid container spacing={2}>
-              {list.map((pet, index) => (
+              {list.map((item, index) => (
                 <>
                   <Grid item xs={6} md={4} lg={3}>
                     <Link href={`/detail/${index}`} underline="none">
@@ -58,11 +60,11 @@ const ListPets = ({ list, title, desc }) => {
                           textAlign: "center",
                           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
                           borderRadius: 2,
-                          minHeight: { xs: 320, md: 380 },
+                          minHeight: { xs: 320, md: 430 },
                         }}
                       >
                         <img
-                          src={pet.image}
+                          src={item.image}
                           loading="lazy"
                           style={{
                             borderRadius: 10,
@@ -70,7 +72,13 @@ const ListPets = ({ list, title, desc }) => {
                             width: "100%",
                           }}
                         />
-                        <Box sx={{ textAlign: "start", pt: 2, ml: 1 }}>
+                        <Box
+                          sx={{
+                            textAlign: "start",
+                            pt: 2,
+                            p: 1,
+                          }}
+                        >
                           <Typography
                             sx={{
                               fontWeight: "bold",
@@ -78,7 +86,7 @@ const ListPets = ({ list, title, desc }) => {
                               fontSize: "16px",
                             }}
                           >
-                            {pet.title}
+                            {item.title}
                           </Typography>
                           <Stack spacing={2} direction="row">
                             <Typography sx={{ fontSize: "12px" }}>
@@ -86,7 +94,7 @@ const ListPets = ({ list, title, desc }) => {
                               <span
                                 style={{ color: "#667479", fontWeight: "bold" }}
                               >
-                                {pet.gene}
+                                {item.product}
                               </span>
                             </Typography>
                             <Typography sx={{ fontSize: "12px" }}>
@@ -94,7 +102,7 @@ const ListPets = ({ list, title, desc }) => {
                               <span
                                 style={{ color: "#667479", fontWeight: "bold" }}
                               >
-                                {pet.age}
+                                {item.size}
                               </span>
                             </Typography>
                           </Stack>
@@ -103,10 +111,36 @@ const ListPets = ({ list, title, desc }) => {
                               fontWeight: "bold",
                               color: "black",
                               fontSize: "16px",
+                              pb: 1,
                             }}
                           >
                             6.900.000 VND
                           </Typography>
+                          <Stack
+                            direction={"row"}
+                            sx={{
+                              bgcolor: "#FCEED5",
+                              borderRadius: 1,
+                              gap: 2,
+                              p: 1,
+                            }}
+                          >
+                            <img
+                              src="/gift.png"
+                              loading="lazy"
+                              width="20"
+                              height="20"
+                            />
+                            <Typography
+                              sx={{
+                                fontSize: "14px",
+                                fontWeight: "bold",
+                                color: "#002A48",
+                              }}
+                            >
+                              Free Toy & Free Shaker
+                            </Typography>
+                          </Stack>
                         </Box>
                       </Box>
                     </Link>
@@ -121,4 +155,4 @@ const ListPets = ({ list, title, desc }) => {
   );
 };
 
-export default ListPets;
+export default ListProduct;

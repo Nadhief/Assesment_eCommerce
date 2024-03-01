@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Chip from "@mui/material/Chip";
+import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 
 const Knowledge = ({ list }) => {
   const handleClick = () => {
@@ -38,9 +39,12 @@ const Knowledge = ({ list }) => {
               borderRadius: 30,
               width: { xs: "100%", md: "auto" },
               mt: { xs: 2, md: 0 },
+              gap: 1,
+              textTransform: "none",
             }}
           >
             View More
+            <ArrowForwardIosOutlinedIcon sx={{ fontSize: "10px" }} />
           </Button>
         </Stack>
       </Box>
@@ -50,7 +54,8 @@ const Knowledge = ({ list }) => {
             <>
               <Grid item xs={12} lg={4}>
                 <Box
-                  //   maxHeight={490}
+                  minHeight={450}
+                  maxHeight={450}
                   sx={{
                     // pt: 1,
                     textAlign: "center",
@@ -79,8 +84,14 @@ const Knowledge = ({ list }) => {
                       {knowledge.title}
                     </Typography>
                     <Typography
+                      // noWrap
                       sx={{
                         pt: 1,
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        WebkitLineClamp: 3, // Number of lines to show
                       }}
                     >
                       {knowledge.deskripsi}

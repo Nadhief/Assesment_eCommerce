@@ -60,8 +60,13 @@ const Category = () => {
         <Box
           component="section"
           sx={{
-            bgcolor: "#FCEED5",
+            position: "relative",
             borderRadius: 7,
+            bgcolor: "#FCEED5",
+            backgroundImage: `url(/herocategory.png)`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right",
+            backgroundSize: "70%",
           }}
         >
           <HeroCategory></HeroCategory>

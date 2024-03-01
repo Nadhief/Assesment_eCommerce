@@ -14,6 +14,8 @@ import Select from "@mui/material/Select";
 import Pagination from "@mui/material/Pagination";
 import Hidden from "@mui/material/Hidden";
 import Link from "@mui/material/Link";
+import CircleIcon from "@mui/icons-material/Circle";
+
 const ListPets = ({ list }) => {
   const [min, setMin] = React.useState("");
   const [max, setMax] = React.useState("");
@@ -66,15 +68,100 @@ const ListPets = ({ list }) => {
                   Color
                 </Typography>
                 <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label="Red" />
-                  <FormControlLabel control={<Checkbox />} label="Apricot" />
-                  <FormControlLabel control={<Checkbox />} label="Black" />
                   <FormControlLabel
                     control={<Checkbox />}
-                    label="Black & White"
+                    label={
+                      <Stack
+                        direction={"row"}
+                        sx={{ gap: 1, alignItems: "center" }}
+                      >
+                        <CircleIcon
+                          fontSize="small"
+                          sx={{ color: "#FF564F" }}
+                        />
+                        <Typography>Red</Typography>
+                      </Stack>
+                    }
                   />
-                  <FormControlLabel control={<Checkbox />} label="Silver" />
-                  <FormControlLabel control={<Checkbox />} label="Tan" />
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={
+                      <Stack
+                        direction={"row"}
+                        sx={{ gap: 1, alignItems: "center" }}
+                      >
+                        <CircleIcon
+                          fontSize="small"
+                          sx={{ color: "#FFB672" }}
+                        />
+                        <Typography>Apricot</Typography>
+                      </Stack>
+                    }
+                  />
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={
+                      <Stack
+                        direction={"row"}
+                        sx={{ gap: 1, alignItems: "center" }}
+                      >
+                        <CircleIcon
+                          fontSize="small"
+                          sx={{ color: "#242B33" }}
+                        />
+                        <Typography>Black</Typography>
+                      </Stack>
+                    }
+                  />
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={
+                      <Stack
+                        direction={"row"}
+                        sx={{ gap: 1, alignItems: "center" }}
+                      >
+                        <CircleIcon
+                          fontSize="small"
+                          sx={{ 
+                            backgroundImage: 'linear-gradient(90deg, #242B33, #D7D7D7)',
+                            borderRadius:'50%',
+                            color: 'transparent'
+                        }}
+                        />
+                        <Typography>Black & White</Typography>
+                      </Stack>
+                    }
+                  />
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={
+                      <Stack
+                        direction={"row"}
+                        sx={{ gap: 1, alignItems: "center" }}
+                      >
+                        <CircleIcon
+                          fontSize="small"
+                          sx={{ color: "#CECECE" }}
+                        />
+                        <Typography>Silver</Typography>
+                      </Stack>
+                    }
+                  />
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={
+                      <Stack
+                        direction={"row"}
+                        sx={{ gap: 1, alignItems: "center" }}
+                      >
+                        <CircleIcon
+                          fontSize="small"
+                          sx={{ color: "#FFF7CE" }}
+                        />
+                        <Typography>Tan</Typography>
+                      </Stack>
+                    }
+                  />
                 </FormGroup>
               </Box>
               <Box sx={{ mb: 3 }}>
@@ -159,52 +246,83 @@ const ListPets = ({ list }) => {
                     borderRadius: 30,
                     width: { xs: "100%", md: "auto" },
                     mt: { xs: 2, md: 0 },
+                    textTransform: "none",
                   }}
                 >
                   Sort by: Popular
                 </Button>
               </Stack>
-              <Box sx={{ flexGrow: 1, pt: 3 }}>
+              <Box sx={{ flexGrow: 1, pt: 5 }}>
                 <Grid container spacing={2}>
                   {list.map((pet, index) => (
-                    <Grid key={index} item xs={6} md={4} lg={4}>
-                      <Link href={`/detail/${index}`} underline="none">
-                        <Box
-                          sx={{
-                            textAlign: "center",
-                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-                            borderRadius: 2,
-                            pb: 3,
-                          }}
-                        >
-                          <img
-                            src={pet.image}
-                            loading="lazy"
-                            style={{
-                              borderRadius: 10,
-                              objectFit: "contain",
-                              width: "100%",
+                    <>
+                      <Grid item xs={6} md={4} lg={4}>
+                        <Link href={`/detail/${index}`} underline="none">
+                          <Box
+                            sx={{
+                              textAlign: "center",
+                              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                              borderRadius: 2,
+                              minHeight: { xs: 320, md: 380 },
                             }}
-                          />
-                          <Box sx={{ textAlign: "start", pt: 2, ml: 1 }}>
-                            <Typography
-                              sx={{ fontWeight: "bold", color: "black" }}
-                            >
-                              {pet.title}
-                            </Typography>
-                            <Stack spacing={2} direction="row">
-                              <Typography>Gene: {pet.gene}</Typography>
-                              <Typography>Age: {pet.age}</Typography>
-                            </Stack>
-                            <Typography
-                              sx={{ fontWeight: "bold", color: "black" }}
-                            >
-                              6.900.000 VND
-                            </Typography>
+                          >
+                            <img
+                              src={pet.image}
+                              loading="lazy"
+                              style={{
+                                borderRadius: 10,
+                                objectFit: "contain",
+                                width: "100%",
+                              }}
+                            />
+                            <Box sx={{ textAlign: "start", pt: 2, ml: 1 }}>
+                              <Typography
+                                sx={{
+                                  fontWeight: "bold",
+                                  color: "black",
+                                  fontSize: "16px",
+                                }}
+                              >
+                                {pet.title}
+                              </Typography>
+                              <Stack spacing={2} direction="row">
+                                <Typography sx={{ fontSize: "12px" }}>
+                                  <span style={{ color: "gray" }}>Gene:</span>{" "}
+                                  <span
+                                    style={{
+                                      color: "#667479",
+                                      fontWeight: "bold",
+                                    }}
+                                  >
+                                    {pet.gene}
+                                  </span>
+                                </Typography>
+                                <Typography sx={{ fontSize: "12px" }}>
+                                  <span style={{ color: "gray" }}>Age:</span>{" "}
+                                  <span
+                                    style={{
+                                      color: "#667479",
+                                      fontWeight: "bold",
+                                    }}
+                                  >
+                                    {pet.age}
+                                  </span>
+                                </Typography>
+                              </Stack>
+                              <Typography
+                                sx={{
+                                  fontWeight: "bold",
+                                  color: "black",
+                                  fontSize: "16px",
+                                }}
+                              >
+                                6.900.000 VND
+                              </Typography>
+                            </Box>
                           </Box>
-                        </Box>
-                      </Link>
-                    </Grid>
+                        </Link>
+                      </Grid>
+                    </>
                   ))}
                 </Grid>
               </Box>

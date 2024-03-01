@@ -5,10 +5,19 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-
+import PlayCircleOutlinedIcon from "@mui/icons-material/PlayCircleOutlined";
 export default function Hero() {
   return (
-    <Container maxWidth="lg">
+    <Container
+      maxWidth="lg"
+      sx={{
+        backgroundImage: `url(/heroorange.png)`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "right 0 bottom 0",
+        backgroundSize: "45%",
+        zIndex: -1,
+      }}
+    >
       <Box sx={{ width: "100%", pt: 10 }}>
         <Grid
           container
@@ -28,23 +37,31 @@ export default function Hero() {
             >
               <Stack>
                 <Typography
-                  variant="h2"
-                  gutterBottom
                   sx={{
                     fontWeight: "bold",
                     color: "#002A48",
+                    fontSize: { xs: "46px", md: "60px" },
                   }}
                 >
                   One More Friend
                 </Typography>
                 <Typography
-                  variant="h3"
-                  gutterBottom
-                  sx={{ fontWeight: "bold", color: "#002A48" }}
+                  sx={{
+                    fontWeight: "bold",
+                    color: "#002A48",
+                    fontSize: { xs: "28px", md: "46px" },
+                  }}
                 >
                   Thousands more fun!
                 </Typography>
-                <Typography variant="h6" sx={{ paddingTop: 2 }}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    paddingTop: 2,
+                    fontSize: { xs: "12px", md: "16px" },
+                    width: { xs: "100%", md: "80%" },
+                  }}
+                >
                   Having a pet means you have more joy, a new friend, a happy
                   person who will always be with you to have fun. We have 200+
                   different pets that can meet your needs!
@@ -58,14 +75,20 @@ export default function Hero() {
                       border: "1px solid #003459",
                       color: "#003459",
                       borderRadius: 30,
+                      gap: 1,
+                      textTransform: "none",
                     }}
                   >
-                    View Intro
+                    View Intro <PlayCircleOutlinedIcon />
                   </Button>
 
                   <Button
                     variant="contained"
-                    sx={{ background: "#003459", borderRadius: 30 }}
+                    sx={{
+                      background: "#003459",
+                      borderRadius: 30,
+                      textTransform: "none",
+                    }}
                   >
                     Explore Now
                   </Button>
@@ -80,7 +103,6 @@ export default function Hero() {
             justifyContent="center"
             sx={{
               width: "50%",
-              // border: "1px solid red"
             }}
           >
             <Box
